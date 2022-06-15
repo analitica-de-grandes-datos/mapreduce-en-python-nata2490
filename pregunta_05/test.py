@@ -3,9 +3,9 @@ import os
 
 result = os.popen("cat data.csv | python3 mapper.py | sort | python3 reducer.py").read()
 
-lines = [line.strip().replace("\n", "") for line in result.split("\n")]
+lines = [line.strip().replace("\n","") for line in result.split("\n")]
 
-expected = """01 4
+expected = """01   4
 02	5
 03	1
 04	3

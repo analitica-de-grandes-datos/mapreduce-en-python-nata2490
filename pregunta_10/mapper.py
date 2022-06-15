@@ -3,14 +3,14 @@
 #
 import sys
 
-lista=[]
-for line in sys.stdin:
-    data = line.strip().split('\t')
-    (key, val) = (data[0], data[1].strip().split(','))
-    #print ("%s %s" % (k, v))
-    for v in val:
-    #    lista.append(list(datos[k]+datos[1][v]))
-        print ("%s %s" % (k, v))
+#if name == "__main__":
+if __name__ == '__main__':
+    for row in sys.stdin:
+        data = row.strip().split("\t")
+        letters = data[0]
+        values = data[1]
+    
+        sys.stdout.write(f"{letters}\t{values}\n")
 
     
 

@@ -13,7 +13,7 @@ def main():
     data= read_stdin_generator(sys.stdin)
     for month, group in groupby(data, itemgetter(0)):
         months= sum(int(count) for month, count in group)
-        print('%s\t%d' % (month, months))
+        print('%s %d' % (month, months))
 
 if __name__ == '__main__':
     main()
