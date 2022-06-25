@@ -3,7 +3,7 @@
 #
 import sys
 
-for line in sys.stdin:
-    val = line.strip().split()
-    (letters, dates,values)=(val[0], val[1], val[2])
-    print('%s\t%s\t%s' % (letters, dates, values))
+if __name__ == "__main__":
+
+    for line in sys.stdin:
+        sys.stdout.write("{}\t{}\t{}\n".format(line.split()[0],line.split()[1],line.split()[2]))

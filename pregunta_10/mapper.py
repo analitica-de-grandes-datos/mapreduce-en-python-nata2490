@@ -3,10 +3,9 @@
 #
 import sys
 
-#if name == "__main__":
 if __name__ == '__main__':
-    for row in sys.stdin:
-        data = row.strip().split("\t")
+    for line in sys.stdin:
+        data = line.strip().split("\t")
         letters = data[0]
         values = data[1]
     

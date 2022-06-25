@@ -1,39 +1,24 @@
 #
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
+
 import sys
-from operator import itemgetter
-import pandas as pd
+if __name__ == '__main__':
 
-#for line in sys.stdin:
-    #val = line.strip().split()
-    #(letters, dates,values)=(val[0], val[1], val[2])
-    #line = line.strip()
-    #data= line.split('\n')
-    #val= int(val)
-    #df= pd.DataFrame([letter], [val], [dates])
-    #df=df.sort_values(['val'], ascending=True)
-    #vals=int(val)
-    #v=vals.sort()
-    #sorted(val, key=itemgetter(1))
-    #print ('%s\t%s\t%s'% (letter, dates, val))
+    letter = []
+    date = []
+    num = []
 
- 
-my_list = {}
+    for line in sys.stdin:
+        letter.append(line.split("\t")[0])
+        date.append(line.split("\t")[1])
+        num.append(int(line.split("\t")[2]))
 
-for line in sys.stdin:
-    line = line.strip()
-    letter, dates, value = line.split('\t')
+    ky_value = zip(letter, date, num)
 
-    if letter in my_list:
-        my_list[letter].append(float(value))
-    else:
-        my_list[letter] = []
-        my_list[letter].append(float(value))
+    ky_value_2 = sorted(ky_value,key=lambda x:(x[0],x[2]))
 
-for letter in my_list.keys():
-    max_letter = max(my_list[letter])
-    min_letter = min(my_list[letter])
-    print ('%s\t%s\t%s'% (letter, max_letter, min_letter))
+    for letter, date, num in ky_value_2:
+      sys.stdout.write("{}   {}   {}\n".format(letter, date, num))
 
  

@@ -3,16 +3,9 @@
 #
 import sys
 
-def read_stdin_geneartor(file):
-    for record in file:
-        yield record
-def main():
-    data=read_stdin_geneartor(sys.stdin)
-    for record in data:
-        #year= record[4:8]
-        month= record[9:11]
-        #print('%s-%s\t%d' % (year, month, 1))
-        print('%s\t%d' % (month, 1))
+if __name__ == "__main__":
 
-if __name__ == '__main__':
-    main()
+    for line in sys.stdin:
+        data = line.split()[1]
+        month = data.split("-")[1]
+        sys.stdout.write("{}\t1\n".format(month))
