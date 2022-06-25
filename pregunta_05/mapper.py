@@ -8,4 +8,4 @@ if __name__ == "__main__":
     for line in sys.stdin:
         data = line.split()[1]
         month = data.split("-")[1]
-        sys.stdout.write("{}\n".format(month))
+        sys.stdout.write("{}\t\n".format(month))
